@@ -1,0 +1,217 @@
+/* font-family: 'Work Sans', sans-serif; */
+
+/* Custom Properties */
+
+:root {
+    --clr-primary: #F70058;
+    --clr-dark: #0C0E36;
+    --clr-light: #fff;
+    --fw-normal: 400;
+    --fw-bold: 700;
+    --fw-black: 900;
+    --grid: 1fr;
+
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  margin: 0;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 1.125rem;
+  color: var(--clr-dark);
+  line-height: 1.6;
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+}
+
+header {
+  background-color: var(--clr-light);
+  text-align: center;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+
+.nav-list {
+ 
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+  margin: 0;
+  /* margin-top: 1em; */
+  list-style: none;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  font-weight: var(--fw-bold);
+  letter-spacing: 1px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: inherit
+}
+
+.logo {
+  margin-top: 1em;
+}
+.info {
+  font-weight: var(--fw-normal);
+}
+
+.title {
+  font-weight: var(--fw-bold);
+}
+
+.weather {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  background: var(--clr-dark);
+  color: var(--clr-light);
+  /* padding: 1em; */
+}
+
+.weather-info {
+  margin: 0 .75rem;
+  color: rgba(255, 255, 255, 0.7);
+  text-align: left;
+  opacity: 1;
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: .75rem;
+  display: flex;
+}
+
+.weather-info span {
+  color: var(--clr-light);
+  margin-left: auto;
+  margin-right: .75rem;
+  font-size: 1rem;
+}
+
+.weather-info:first-of-type {
+  margin-top: .5em;
+  position: relative;
+}
+
+.weather-info:first-of-type::after {
+  content: '';
+  margin-top: .5em;
+  position: absolute;
+  background-color: var(--clr-light);
+  opacity: .25;
+  height: 3px;
+  width: calc(100% - .75rem);
+  bottom: 0;
+}
+
+.weather-info:last-of-type {
+  margin-top: .5em;
+}
+
+.weather-icon {
+  grid-row: span 2;
+  background-color: var(--clr-primary);
+  padding: 2em;
+  display: flex;
+}
+
+.btn {
+  text-transform: uppercase;
+  padding: .5rem;
+  border: solid var(--clr-primary);
+}
+ 
+.btn a{
+  text-decoration: none;
+}
+
+.btn-primary {
+/* Seasons Pass */
+letter-spacing: 0.05em;
+background: var(--clr-primary);
+color: var(--clr-light);
+
+}
+
+.btn-outline {
+/* Get tickets */
+
+
+
+/* identical to box height */
+
+letter-spacing: 0.05em;
+color: var(--clr-primary);
+
+
+}
+
+
+
