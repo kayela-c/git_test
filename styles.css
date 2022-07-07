@@ -9,11 +9,7 @@
     --fw-normal: 400;
     --fw-bold: 700;
     --fw-black: 900;
-    --grid: 
-    minmax(1em, 1fr) 
-    minmax(20rem, 45ch) 
-    1fr
-    minmax(1em, 3fr);
+    --grid: minmax(1em, 1fr) minmax(20rem, 45ch) 1fr minmax(1em, 3fr);
 
 }
 
@@ -64,6 +60,20 @@ header {
   .header {
     display: grid;
     grid-template-columns: var(--grid);
+  }
+
+  .logo, 
+  .nav,
+  .weather {
+    grid-row: 1;
+  }
+
+  .logo {
+    grid-column: 2;
+  }
+
+  .nav  {
+    grid-column: 3 / 4;
   }
 
   .weather {
