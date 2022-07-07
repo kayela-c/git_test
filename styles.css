@@ -9,7 +9,11 @@
     --fw-normal: 400;
     --fw-bold: 700;
     --fw-black: 900;
-    --grid: 1fr;
+    --grid: 
+    minmax(1em, 1fr) 
+    minmax(20rem, 45ch) 
+    1fr
+    minmax(1em, 3fr);
 
 }
 
@@ -35,6 +39,7 @@ dd {
 }
 
 
+
 /* Set core root defaults */
 html:focus-within {
   scroll-behavior: smooth;
@@ -55,7 +60,21 @@ header {
   text-align: center;
 }
 
+@media (min-width: 700px) {
+  .header {
+    display: grid;
+    grid-template-columns: var(--grid);
+  }
 
+  .weather {
+    grid-column: -2 / -1;
+    justify-self: end;
+  }
+}
+
+p {
+  margin-top: 0;
+}
 
 /* Inherit fonts for inputs and buttons */
 input,
@@ -105,15 +124,16 @@ select {
 }
 .info {
   font-weight: var(--fw-normal);
-  margin: 1.5em 0 3em 0;
+  margin: 0 0 3em 0;
 }
 
 .title {
   line-height: 1;
   font-weight: var(--fw-black);
   font-size: 3rem;
-  margin-bottom: 0;
+  margin-bottom: .75em;
 }
+
 .weather {
   display: grid;
   grid-template-columns: min-content 1fr;
@@ -173,7 +193,6 @@ select {
   margin-top: .5em;
 }
 
-
 .btn {
   cursor: pointer;
   display: inline-block;
@@ -220,12 +239,12 @@ border: none;
   padding: 3em 1em 5rem;
 }
 
-@media (min-width: 500px){
+@media (min-width: 480px){
   .main {
     display: grid;
-    grid-template-columns: minmax(1em, 1fr) 
-    minmax(20rem, 45ch) minmax(1em, 3fr);
+    grid-template-columns: var(--grid);
     justify-items: start;
+   
   }
   
   .main > * {
@@ -235,13 +254,20 @@ border: none;
   .main-ski {
     background-position: left bottom;
   }
+
+  .btn + .btn {
+    margin-left: 1em;
+  }
+  
+
 }
 
-@media min-width: 1200px {
+@media (min-width: 1200px) {
   .main-ski {
-    background-position: center left;
+    background-position: center right;
   }
 }
+
 
 
 
