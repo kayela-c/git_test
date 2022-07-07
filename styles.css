@@ -105,12 +105,15 @@ select {
 }
 .info {
   font-weight: var(--fw-normal);
+  margin: 1.5em 0 3em 0;
 }
 
 .title {
-  font-weight: var(--fw-bold);
+  line-height: 1;
+  font-weight: var(--fw-black);
+  font-size: 3rem;
+  margin-bottom: 0;
 }
-
 .weather {
   display: grid;
   grid-template-columns: min-content 1fr;
@@ -217,11 +220,30 @@ border: none;
   padding: 3em 1em 5rem;
 }
 
-.title {
-  line-height: 1;
-  font-weight: var(--fw-black);
-  font-size: 3rem;
+@media (min-width: 500px){
+  .main {
+    display: grid;
+    grid-template-columns: minmax(1em, 1fr) 
+    minmax(20rem, 45ch) minmax(1em, 3fr);
+    justify-items: start;
+  }
+  
+  .main > * {
+    grid-column: 2 / 3;
+  }
+
+  .main-ski {
+    background-position: left bottom;
+  }
 }
+
+@media min-width: 1200px {
+  .main-ski {
+    background-position: center left;
+  }
+}
+
+
 
 .main-ski {
 background-image: url(/images/sebastian-staines-xZIFEPtRsRI-unsplash\ 1.png);
